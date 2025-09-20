@@ -6,10 +6,8 @@ import { Spinner } from "@heroui/react";
 
 export default function Hero() {
   const timeLeft = useCountDown();
-
-  // if (!timeLeft) return null;
-
-  const { days = 0, hours = 0, minutes = 0, seconds = 0 } = timeLeft || {};
+  const isLoading = timeLeft === null;
+  const { days, hours, minutes, seconds } = timeLeft || {};
 
   return (
     <div className="h-[100svh] w-full relative">
@@ -41,26 +39,25 @@ export default function Hero() {
               <div className="grid grid-cols-4 gap-5">
                 <div className="p-2 bg-gray-700/30 rounded-2xl flex flex-col items-center">
                   <div className="font-bold text-3xl text-yellow-200">
-                    {days ? `${days}` : <Spinner color="warning" />}
+                    {isLoading ? <Spinner color="warning" /> : days}
                   </div>
                   <p className="font-light">Days</p>
                 </div>
                 <div className="p-2 bg-gray-700/30 rounded-2xl flex flex-col items-center">
                   <div className="font-bold text-3xl text-yellow-200">
-                    {" "}
-                    {hours ? `${hours}` : <Spinner color="warning" />}
+                    {isLoading ? <Spinner color="warning" /> : hours}
                   </div>
                   <p className="font-light">Hours</p>
                 </div>
                 <div className="p-2 bg-gray-700/30 rounded-2xl flex flex-col items-center">
                   <div className="font-bold text-3xl text-yellow-200">
-                    {minutes ? `${minutes}` : <Spinner color="warning" />}
+                    {isLoading ? <Spinner color="warning" /> : minutes}
                   </div>
                   <p className="font-light">minutes</p>
                 </div>
                 <div className="p-2 bg-gray-700/30 rounded-2xl flex flex-col items-center">
                   <div className="font-bold text-3xl text-yellow-200">
-                    {seconds ? `${seconds}` : <Spinner color="warning" />}
+                    {isLoading ? <Spinner color="warning" /> : seconds}
                   </div>
                   <p className="font-light">seconds</p>
                 </div>
