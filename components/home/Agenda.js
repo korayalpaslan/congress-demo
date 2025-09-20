@@ -5,7 +5,7 @@ import { Tabs, Tab } from "@heroui/react";
 const agenda = [
   {
     day: 1,
-    date: "14 April 2026",
+    date: "14 October 2025",
     content: [
       {
         title: "08:00 - 09:00 | Registration & Welcome Coffee",
@@ -36,7 +36,7 @@ const agenda = [
   },
   {
     day: 2,
-    date: "15 April 2026",
+    date: "15 October 2025",
     content: [
       {
         title: "08:30 - 09:00 | Morning Coffee & Networking",
@@ -66,7 +66,7 @@ const agenda = [
   },
   {
     day: 3,
-    date: "16 April 2026",
+    date: "16 October 2025",
     content: [
       {
         title: "08:30 - 09:00 | Morning Coffee & Networking",

@@ -1,8 +1,16 @@
+"use client";
+import { useCountDown } from "@/hooks/useCountDown";
 import { Button } from "@heroui/react";
 import Image from "next/image";
-import React from "react";
+import { Spinner } from "@heroui/react";
 
 export default function Hero() {
+  const timeLeft = useCountDown();
+
+  // if (!timeLeft) return null;
+
+  const { days = 0, hours = 0, minutes = 0, seconds = 0 } = timeLeft || {};
+
   return (
     <div className="h-[100svh] w-full relative">
       <Image
@@ -19,7 +27,7 @@ export default function Hero() {
           <div className="flex flex-col space-y-10 lg:space-y-0 lg:flex-row mt-10">
             <div className="lg:w-1/2 flex space-x-5">
               <div className="w-1/2 lg:w-auto">
-                <p className="lg:text-lg">April 14-16, 2026</p>
+                <p className="lg:text-lg">October 14-16, 2025</p>
                 <p className="font-light text-lg">İstanbul, Turkey</p>
               </div>
               <div>
@@ -32,20 +40,29 @@ export default function Hero() {
               <h2 className="mb-5 text-sm">TIME REMAINING:</h2>
               <div className="grid grid-cols-4 gap-5">
                 <div className="p-2 bg-gray-700/30 rounded-2xl flex flex-col items-center">
-                  <p className="font-bold text-3xl text-yellow-200">15</p>
+                  <div className="font-bold text-3xl text-yellow-200">
+                    {days ? `${days}` : <Spinner color="warning" />}
+                  </div>
                   <p className="font-light">Days</p>
                 </div>
                 <div className="p-2 bg-gray-700/30 rounded-2xl flex flex-col items-center">
-                  <p className="font-bold text-3xl text-yellow-200">04</p>
+                  <div className="font-bold text-3xl text-yellow-200">
+                    {" "}
+                    {hours ? `${hours}` : <Spinner color="warning" />}
+                  </div>
                   <p className="font-light">Hours</p>
                 </div>
                 <div className="p-2 bg-gray-700/30 rounded-2xl flex flex-col items-center">
-                  <p className="font-bold text-3xl text-yellow-200">34</p>
-                  <p className="font-light">Minutes</p>
+                  <div className="font-bold text-3xl text-yellow-200">
+                    {minutes ? `${minutes}` : <Spinner color="warning" />}
+                  </div>
+                  <p className="font-light">minutes</p>
                 </div>
                 <div className="p-2 bg-gray-700/30 rounded-2xl flex flex-col items-center">
-                  <p className="font-bold text-3xl text-yellow-200">55</p>
-                  <p className="font-light">Seconds</p>
+                  <div className="font-bold text-3xl text-yellow-200">
+                    {seconds ? `${seconds}` : <Spinner color="warning" />}
+                  </div>
+                  <p className="font-light">seconds</p>
                 </div>
               </div>
             </div>
