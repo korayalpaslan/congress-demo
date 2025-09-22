@@ -16,7 +16,7 @@ export default function Footer() {
                   height={400}
                   className="w-[40px]"
                 />
-                <h1 className="text-4xl font-bold ml-2">WCE 2026</h1>
+                <h1 className="text-4xl font-bold ml-2">WCE 2025</h1>
               </div>
               <div className="mb-5 text-sm">
                 <h1 className="font-bold">Address</h1>
