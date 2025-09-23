@@ -4,6 +4,7 @@ import Faq from "@/components/home/Faq";
 import Hero from "@/components/home/Hero";
 import Registration from "@/components/home/Registration";
 import Speakers from "@/components/home/Speakers";
+import Sponsors from "@/components/home/Sponsors";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Agenda />
       <Registration />
       <Faq />
+      <Sponsors />
     </>
   );
 }
